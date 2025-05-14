@@ -1,54 +1,88 @@
-# React + TypeScript + Vite
+# CryptoPulse Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight real-time cryptocurrency price scanner and filter built with Streamlit and the CoinGecko API.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Quick Start
 
-## Expanding the ESLint configuration
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/xiyu0217/CryptoPulse.git
+   cd CryptoPulse
+   ````
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Create & activate a Python virtual environment**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate      # macOS/Linux
+   # .venv\Scripts\activate       # Windows
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the app**
+
+   ```bash
+   streamlit run app.py
+   ```
+
+5. **Open in browser**
+   Visit [http://localhost:8501](http://localhost:8501) to view the dashboard.
+
+---
+
+## 📑 Features
+
+* **Watchlist**: Sidebar multi-select for coins, defaulting to top 20 by market cap
+
+* **Metrics per coin**
+  * Current price (USD)
+  * 24h change (%)
+  * Market cap (USD)
+  * 24h volume (USD)
+
+---
+
+## 🔧 Project Structure
+
+```
+CryptoPulse/
+├── .venv/             # Python virtual environment (not checked into Git)
+├── app.py             # Streamlit application script
+├── requirements.txt   # Dependencies: streamlit, pycoingecko, pandas
+└── README.md          # This file
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Configuration
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+
+  Caches API responses for 60 seconds to avoid rate limiting.
+
+---
+
+## 🛠️ Possible Extensions
+
+* **Price Alerts**: Let users set upper/lower price thresholds and trigger browser notifications
+* **Additional Filters**: Add filters for volume, market cap ranking, or custom metrics
+* **Enhanced Charts**: Integrate Plotly for interactive charts and multiple timeframes
+* **Deployment**: Deploy to Streamlit Community Cloud or Docker for easy sharing
+
+---
+
+## 🤝 Contributing & License
+
+* Feel free to open issues or submit pull requests.
+* Licensed under the [MIT License](LICENSE).
+
+---
+
+**Happy crypto tracking with CryptoPulse!**
+
+
