@@ -1,0 +1,17 @@
+.App {
+  padding: 2rem;
+  font-family: sans-serif;
+}
+.controls {
+  margin-bottom: 1rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
