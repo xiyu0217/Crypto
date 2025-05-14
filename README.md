@@ -1,6 +1,6 @@
 # CryptoPulse Dashboard
 
-A lightweight real-time cryptocurrency price scanner and filter built with Streamlit and the CoinGecko API.
+A lightweight real-time cryptocurrency price scanner and filter built with Vercel API.
 
 
 ## 🚀 Quick Start
@@ -57,13 +57,6 @@ CryptoPulse/
 ├── requirements.txt   # Dependencies: streamlit, pycoingecko, pandas
 └── README.md          # This file
 ```
-
----
-
-## ⚙️ Configuration
-
-
-  Caches API responses for 60 seconds to avoid rate limiting.
 
 ---
 
